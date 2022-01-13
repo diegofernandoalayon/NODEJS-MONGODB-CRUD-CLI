@@ -1,13 +1,13 @@
 // const {program} = require('commander')
 import { program } from 'commander'
-import  pkg  from 'inquirer'
-const {prompt} = pkg
+import inquirer from 'inquirer'
+// const {prompt} = pkg
 
 program.version('0.0.1')
   .description('A command line tool for managing tasks')
 
 program.command('save').action(async () => {
-  const answers = await prompt([
+  const answers = await inquirer.prompt([
     {
       type: 'input',
       message: 'Task title',
@@ -17,6 +17,12 @@ program.command('save').action(async () => {
       type: 'input',
       message: "Task description",
       name: "description",
+    },
+    {
+      type:'list',
+      message: 'hola',
+      name: 'todo',
+      choices: ['nana','nanita', 'nada']
     }
   ])
   console.log(answers)

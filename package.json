@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^8.3.0",
+    "dot-env": "^0.0.1",
     "dotenv": "^10.0.0",
     "inquirer": "^8.2.0",
     "mongoose": "^6.1.6"
