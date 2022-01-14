@@ -18,3 +18,16 @@ export const listTask = async () => {
  await connection.close()
  process.exit(0) //para indicar a node que el programa acabo bien, y que no mantenga a la espera 
 }
+
+export const deleteTask = async (id) => {
+  const noteDeleted = await Task.findByIdAndDelete(id)
+  console.table([{
+    _id: noteDeleted._id.toString(),
+    title: noteDeleted.title,
+    description: noteDeleted.description
+  }])
+  console.log('Deleted!!')
+  
+  await connection.close()
+  process.exit(0)
+}
