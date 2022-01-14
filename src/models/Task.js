@@ -13,3 +13,5 @@ const schema = new mongoose.Schema ({
   timestamps: true,
   vesionKey: false
 })
+
+export default mongoose.model('Task',schema)
