@@ -27,7 +27,7 @@ program.command('save').action(async () => {
   ])
   addTask(answers)
 })
-program.command('list').action(async () => {
+program.command('list').action(() => {
   listTask()
 })
 program.parse(process.argv) // nos permite recibir los argumentos pasados por consola
