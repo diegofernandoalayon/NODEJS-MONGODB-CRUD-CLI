@@ -17,6 +17,7 @@ const taksQuestions = [
     name: "description",
   }
 ]
+
 program.command('save').alias('s').action(async () => {
   const answers = await inquirer.prompt(taksQuestions)
   addTask(answers)
@@ -26,5 +27,8 @@ program.command('list').alias('l').action(() => {
 })
 program.command('delete <id>').alias('d').action((id) => {
   deleteTask(id)
+})
+program.command('update <id>').alias('u').action((id)=>{
+  console.log(id)
 })
 program.parse(process.argv) // nos permite recibir los argumentos pasados por consola
