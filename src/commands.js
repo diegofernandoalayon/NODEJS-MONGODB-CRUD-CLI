@@ -32,4 +32,7 @@ program.command('update <id>').alias('u').action(async (id)=>{
   const answers = await inquirer.prompt(taksQuestions)
   updateTask(id, answers)
 })
+program.command('find <text>').alias('f').action((text) => {
+  console.log(text)
+})
 program.parse(process.argv) // nos permite recibir los argumentos pasados por consola
