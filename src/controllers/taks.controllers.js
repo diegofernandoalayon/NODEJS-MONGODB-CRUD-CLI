@@ -34,5 +34,7 @@ export const deleteTask = async (id) => {
 
 export const updateTask = async (id,newTask) => {
   await Task.updateOne({_id:id},newTask)
+  console.log('Task Updated')
+  await connection.close()
   process.exit(0)
 }

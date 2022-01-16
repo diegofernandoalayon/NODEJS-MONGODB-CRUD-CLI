@@ -29,9 +29,7 @@ program.command('delete <id>').alias('d').action((id) => {
   deleteTask(id)
 })
 program.command('update <id>').alias('u').action(async (id)=>{
-  // console.log(id)
   const answers = await inquirer.prompt(taksQuestions)
   updateTask(id, answers)
-  // console.log(answers)
 })
 program.parse(process.argv) // nos permite recibir los argumentos pasados por consola
