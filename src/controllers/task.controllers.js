@@ -38,3 +38,25 @@ export const updateTask = async (id,newTask) => {
   await connection.close()
   process.exit(0)
 }
+export const findTaks = async (text) => {
+  const search = new RegExp(text,'i')
+  // const tasks = []
+  const tasks = await Task.find({
+    $or:[{title: search}, {description: search}]
+  })
+  if(tasks.length === 0){
+    console.log('No tasks found')
+  }else{
+    console.table(
+      tasks.map(task => {
+        return{
+          id: task._id.toString(),
+          title: task.title,
+          description: task.description
+        }
+      })
+    )
+  }
+  await connection.close()
+  process.exit(0)
+}
