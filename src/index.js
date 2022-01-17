@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import 'dotenv/config'
 import {connectDB} from './db.js'
 import './commands.js'
